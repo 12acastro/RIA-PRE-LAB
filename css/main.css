@@ -1,0 +1,74 @@
+body {
+  background-color: rgb(122, 99, 76);
+}
+
+.header {
+  background-color: #1B1A17;
+}
+.header__btnModoOscuro {
+  margin-top: 1rem;
+  margin-left: 1rem;
+  border-radius: 1rem;
+  background-color: #F0A500;
+  width: auto;
+  height: auto;
+  padding: 1rem;
+  font-size: 1rem;
+  font-family: "Libre Franklin", sans-serif;
+}
+.header__logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.header__img {
+  width: 10rem;
+  height: 10 rem;
+}
+.header__titulo {
+  color: white;
+  font-family: "Libre Franklin", sans-serif;
+}
+
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+.main__divBotones {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.main__btn {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+  background-color: #F0A500;
+  width: 20rem;
+  height: 5rem;
+  font-size: 2rem;
+  font-family: "Libre Franklin", sans-serif;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #1b1a17;
+  opacity: 90%;
+  width: auto;
+  height: 3.5rem;
+  margin-bottom: 0px;
+}
+.footer p {
+  color: white;
+  font-family: "Libre Franklin", sans-serif;
+}
+
+/*# sourceMappingURL=main.css.map */

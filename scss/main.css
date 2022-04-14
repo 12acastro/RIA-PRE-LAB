@@ -1,0 +1,61 @@
+body {
+  background-color: #7a634c;
+}
+
+.header {
+  background-color: #1B1A17;
+}
+
+.header__logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.header__img {
+  width: 10rem;
+  height: 10 rem;
+}
+
+.header__titulo {
+  color: white;
+}
+
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+.main__divBotones {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.main button {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+/*# sourceMappingURL=main.css.map */

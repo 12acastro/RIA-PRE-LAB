@@ -1,0 +1,16 @@
+{
+    "version": 3,
+    "mappings": "ACEA,AAAA,IAAI,CAAA;EACA,gBAAgB,EAAE,OAAgB;CACrC;;AEGD,AAAA,OAAO,CAAC;EACJ,gBAAgB,EAAE,OAAO;CAa5B;;AAXI,AAAD,aAAO,CAAA;EARP,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,WAAW,EAAE,MAAM;EACnB,eAAe,EAAE,MACrB;CAMK;;AACA,AAAD,YAAM,CAAA;EACH,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,MAAM;CAChB;;AACA,AAAD,eAAS,CAAA;EACD,KAAK,EDlBH,KAAK;CCmBV;;AEnBT,AAAA,CAAC,CAAA;EACG,OAAO,EAAE,GAAG;EACZ,MAAM,EAAE,GAAG;CACd;;ACKI,AAAD,iBAAa,CAAA;EANb,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,WAAW,EAAE,MAAM;EACnB,eAAe,EAAE,MAAM;EAKnB,UAAU,EAAE,IAAI;EAChB,aAAa,EAAE,IAAI;CACtB;;AALL,AAMI,KANC,CAMD,MAAM,CAAC;EACH,UAAU,EAAE,MAAM;EAClB,aAAa,EAAE,MAAM;CACxB",
+    "sources": [
+        "main.scss",
+        "../parciales/_body.scss",
+        "../parciales/_variables.scss",
+        "../parciales/_header.scss",
+        "../parciales/_variables.scss",
+        "../parciales/_reset.scss",
+        "../parciales/_main.scss",
+        "../parciales/_variables.scss"
+    ],
+    "names": [],
+    "file": "main.css"
+}

@@ -1,0 +1,33 @@
+@import "./variables";
+@mixin centrado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center
+}
+.header {
+    background-color: #1B1A17;
+    &__btnModoOscuro{
+        margin-top: 1rem;
+        margin-left: 1rem;
+        border-radius: 1rem;
+        background-color: #F0A500;
+        width: auto;
+        height: auto;
+        padding: 1rem;
+        font-size: 1rem;
+        font-family: 'Libre Franklin', sans-serif;
+    }
+    &__logo{
+        @include centrado;
+    }
+    &__img{
+       width: 10rem;
+       height: 10 rem;
+    } 
+    &__titulo{
+            color: $colorTitulo;
+            font-family: 'Libre Franklin', sans-serif;
+        }
+        
+}
