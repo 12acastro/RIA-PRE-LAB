@@ -1,0 +1,34 @@
+@import "variables";
+@mixin centrado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.main{
+    &__divBotones{
+        @include centrado;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+    &__btn {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        border-radius: 1rem;
+        background-color: #F0A500;
+        width: 20rem;
+        height: 5rem;
+        font-size: 2rem;
+        font-family: 'Libre Franklin', sans-serif;
+  }    
+&___btnSalir{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    background-color: #F0A500;
+    width: 20rem;
+    height: 3rem;
+    font-size: 2rem;
+    font-family: 'Libre Franklin', sans-serif;
+    }  
+}

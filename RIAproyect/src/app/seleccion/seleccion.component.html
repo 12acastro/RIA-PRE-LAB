@@ -1,0 +1,18 @@
+<p>{{eleccion}}</p>
+<div class="main__divBotones">
+    <button class="main__btn" (click)="setEleccion(1)">Agregar Cliente</button>
+    <div *ngIf="eleccion == 1">
+        <app-agregar-usuario></app-agregar-usuario>
+        <br>
+        <button class="main__btnSalir" (click)="setEleccion(0)">Salir</button>
+    </div>
+    <button class="main__btn" (click)="setEleccion(2)">Agregar Productos</button>
+    <div *ngIf="eleccion == 2">
+        <app-agregar-producto></app-agregar-producto>
+    </div>
+    <button class="main__btn" (click)="setEleccion(3)">Agregar Ventas</button>
+    <div *ngIf="eleccion == 3">
+        <app-agregar-ventas></app-agregar-ventas>
+    </div>
+    
+</div>
