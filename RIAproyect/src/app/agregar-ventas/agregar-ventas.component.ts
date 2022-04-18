@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Productos } from '../agregar-producto/Productos';
+import { Clientes } from '../agregar-usuario/Clientes';
+import { Ventas } from './Ventas';
 
 @Component({
   selector: 'app-agregar-ventas',
@@ -11,5 +14,11 @@ export class AgregarVentasComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+/*
+ agregarVenta(fecha:string, cliente:Clientes,producto:Productos):void {
+    let venta = new Ventas(fecha, cliente, producto);
+    localStorage.setItem('cliente ' + producto,JSON.stringify(venta));
+    alert('Venta agregada satisfactoriamente');
+  }
+  */ 
 }

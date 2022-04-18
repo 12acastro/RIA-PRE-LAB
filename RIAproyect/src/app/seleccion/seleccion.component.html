@@ -15,6 +15,8 @@
     <button class="main__btn" (click)="setEleccion(3)">Agregar Ventas</button>
     <div class="main__agregar" *ngIf="eleccion == 3">
         <app-agregar-ventas></app-agregar-ventas>
+        <br>
+        <button class="main__btnSalir" (click)="setEleccion(0)">Salir</button>
     </div>
     
 </div>

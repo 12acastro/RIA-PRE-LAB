@@ -15,9 +15,13 @@ export class AgregarProductoComponent implements OnInit {
   }
   
   agregarProducto(nombre:string, descripcion:string, precio:string, imagen:string):void {
-    let precio1=parseInt(precio);
-    let producto = new Productos(nombre,descripcion,precio1,imagen);
-    localStorage.setItem('producto ' + nombre,JSON.stringify(producto));
-    alert('Producto agregado satisfactoriamente');
+    if(nombre != "" && descripcion != "" && precio  != "" && imagen != ""){
+      let precio1=parseInt(precio);
+      let producto = new Productos(nombre,descripcion,precio1,imagen);
+      localStorage.setItem('producto ' + nombre,JSON.stringify(producto));
+      alert('Producto agregado satisfactoriamente');
+    }else{
+      alert('Rellene todos los campos');
+    }
   }
 }
