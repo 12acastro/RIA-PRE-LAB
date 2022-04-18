@@ -1,18 +1,20 @@
 <p>Documento:</p>
-<input class="datoUsuario" id="documento" type="text">
+<input class="datoUsuario" #documento id="documento" type="text">
 
 <p>Nombre:</p>
-<input class="datoUsuario" id="nombre" type="text">
+<input class="datoUsuario" #nombre id="nombre" type="text">
 
 <p>Apellido:</p>
-<input class="datoUsuario" id="apellido" type="text">
+<input class="datoUsuario" #apellido id="apellido" type="text">
 
 <p>Fecha de Nacimiento:</p>
-<input class="datoUsuario" id="fechaNacimiento" type="date">
+<input class="datoUsuario" #fechaNac id="fechaNacimiento" type="date">
 
 <p>Direccion:</p>
-<input class="datoUsuario" id="direccion" type="text">
+<input class="datoUsuario" #direccion id="direccion" type="text">
 
 <p>Telefono:</p>
 <input class="datoUsuario" id="telefono" type="text" #telefono>
-
+<div class="divBtnCliente">
+    <button class="btnAgregar" (click)="agregarCliente(documento.value,nombre.value, apellido.value,fechaNac.value,direccion.value,telefono.value)">Agregar Cliente</button>
+</div>

@@ -7,7 +7,47 @@ Esto esta mal pero para probar
     border-radius: 1rem;
     background-color: #F0A500;
     width: 10rem;
-    height: 3rem;
+    height: auto;
     font-size: 2rem;
     font-family: 'Libre Franklin', sans-serif;
+    padding: 1rem;
+    &:hover{
+        opacity: 80%;
+        transform: scale(1.1);
+        cursor: pointer;
+    }
+
 }
+
+.main__btn {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    background-color: #F0A500;
+    width: 20rem;
+    height: 5rem;
+    font-size: 2rem;
+    font-family: 'Libre Franklin', sans-serif;
+    padding: 1rem;
+    &:hover{
+        opacity: 80%;
+        transform: scale(1.1);
+        cursor: pointer;
+    }
+}  
+
+.main__agregar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(67, 67, 67);
+    opacity: 80%;
+    width: 30rem;
+    height: auto;
+    border-radius: 3rem;
+    padding: 2rem;
+    color: wheat;
+    text-align: center;
+ 
+}
+

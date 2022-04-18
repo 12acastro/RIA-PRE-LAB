@@ -7,9 +7,27 @@ p {
     margin-top: 1rem;
     margin-bottom: 1rem;
     border-radius: 1rem;
-    background-color: #F0A500;
+    background-color: #d9c497;
     width: 20rem;
     height: 3rem;
     font-size: 1.5rem;
     font-family: 'Libre Franklin', sans-serif;
+    text-align: center;
+}
+
+.btnAgregar{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    background-color: #F0A500;
+    width: auto;
+    height: auto;
+    font-size: 2rem;
+    font-family: 'Libre Franklin', sans-serif;
+    padding: 1rem;
+    &:hover{
+        opacity: 80%;
+        transform: scale(1.1);
+        cursor: pointer;
+    }
 }

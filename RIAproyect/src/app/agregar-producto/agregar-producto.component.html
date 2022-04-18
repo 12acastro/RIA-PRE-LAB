@@ -1,1 +1,15 @@
-<p>agregar-producto wwee!</p>
+<p>Nombre:</p>
+<input class="dato" #nombre id="nombre" type="text">
+
+<p>Descripcion:</p>
+<input class="dato" #descripcion id="descripcion" type="text">
+
+<p>Precio:</p>
+<input class="dato" #precio id="precio" type="text">
+
+<p>Imagen:</p>
+<input class="dato" #imagen id="imagen" type="file" accept="image/png, image/jpeg">
+
+<div class="divBtnCliente">
+    <button class="btnAgregar" (click)="agregarProducto(nombre.value,descripcion.value,precio.value, imagen.value)">Agregar Producto</button>
+</div>
