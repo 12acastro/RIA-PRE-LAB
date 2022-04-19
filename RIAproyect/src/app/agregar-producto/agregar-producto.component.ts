@@ -20,8 +20,10 @@ export class AgregarProductoComponent implements OnInit {
       let producto = new Productos(nombre,descripcion,precio1,imagen);
       localStorage.setItem('producto ' + nombre,JSON.stringify(producto));
       alert('Producto agregado satisfactoriamente');
+     
     }else{
       alert('Rellene todos los campos');
     }
   }
+
 }
