@@ -14,6 +14,34 @@ export class AgregarVentasComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  prueba():string {
+    let algoN=new Clientes(" "," "," "," "," "," ");
+    let thisKey =" ";
+    let nuevo = " ";
+    for (let n = 0;  n < localStorage.length; ++n) {
+      thisKey = localStorage.key(n)!;
+      if(thisKey.includes("cliente ")!){
+              
+       /* try{
+          let algo = JSON.parse(localStorage.getItem(thisKey)!);
+          algoN = JSON.parse(localStorage.getItem(thisKey)!);
+          console.log(algoN.nombre);
+          console.log(algo.documento);
+
+          return algoN.documento;
+
+          console.log(localStorage.getItem(thisKey!));
+           console.log((valor['documento']!);
+         }catch(e){
+           return "no existe";
+           console.log(e);
+         }*/
+      }
+  
+    }
+    return "no existe";
+  }
 /*
  agregarVenta(fecha:string, cliente:Clientes,producto:Productos):void {
     let venta = new Ventas(fecha, cliente, producto);
