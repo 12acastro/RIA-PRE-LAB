@@ -18,15 +18,40 @@ export class SeleccionComponent implements OnInit {
     */
 
   }
+
   setEleccion (numero:number) : void {
+   //controla que no se abra agregar ventas si no hay productos o clientes 
+    if(numero==3){
+      let cantProducto=0;
+      let cantCliente=0;
+      let thisKey ="";
+      for (let n = 0;  n < localStorage.length; ++n) {
+        thisKey = localStorage.key(n)!;
+        if(thisKey.includes("cliente ")!){
+            cantCliente++;
+        }else{
+          if(thisKey.includes("producto ")!){
+            cantProducto++;
+            }
+          }
+      }
+      if(cantCliente == 0 || cantProducto == 0){
+        if(cantCliente == 0 && cantProducto == 0){
+          alert ("Debe dar de alta al menos un Producto y un Cliente")
+        }else{if(cantCliente == 0){
+                  alert ("Debe dar de alta al menos un Cliente");
+                }else{
+                  alert ("Debe dar de alta al menos un Producto")
+                }
+              }
+      
+      return;
+      }
+    }
     this.eleccion=numero;
     return;
   }
-  
- /* getEleccion (): number {
-    return this.eleccion;
-  }*/
-
+ 
   ngOnInit(): void {
   }
 

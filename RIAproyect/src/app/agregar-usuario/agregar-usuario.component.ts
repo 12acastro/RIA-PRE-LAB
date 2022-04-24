@@ -19,8 +19,16 @@ export class AgregarUsuarioComponent implements OnInit {
 
    agregarCliente(documento:string, nombre:string, apellido:string, fechaNac:string, direccion:string, telefono:string):void {
     if(documento != "" && nombre != "" && apellido  != "" && fechaNac != "" && direccion != ""){
-      let cliente = new Clientes(documento, nombre,apellido,fechaNac,direccion,telefono);
-      localStorage.setItem('cliente ' + documento,JSON.stringify(cliente));
+      let cantCliente;
+      if(localStorage.getItem("cantCliente")!=null){
+        cantCliente = parseInt(localStorage.getItem("cantCliente")!);
+        cantCliente=cantCliente+1;
+      }else{
+        cantCliente = 1;
+      }
+      localStorage.setItem("cantCliente", cantCliente.toString());
+      let cliente = new Clientes("cliente "+cantCliente,documento, nombre,apellido,fechaNac,direccion,telefono);
+      localStorage.setItem('cliente ' + cantCliente,JSON.stringify(cliente));
       alert('Cliente agregado satisfactoriamente');
     }else{
       alert('Rellene todos los campos')
@@ -28,3 +36,12 @@ export class AgregarUsuarioComponent implements OnInit {
   }
  
 }
+/*
+ for (let n = 0;  n < localStorage.length; ++n) {
+      thisKey = localStorage.key(n)!;
+      if(thisKey.includes("cliente ")!){
+        let algo = JSON.parse(localStorage.getItem(thisKey)!);
+        this.colClientes.push(algo);
+      }
+    }
+*/

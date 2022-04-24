@@ -2,13 +2,38 @@
 <input class="fecha" #fecha id="fecha" type="date">
 
 <p>Cliente:</p>
-<select name="cliente" #cliente id="cliente">Elija un cliente</select>
+<select [(ngModel)]="this.clienteSelec"  #cliente id="cliente" >Elija un cliente
+    <option  *ngFor="let dato of colClientes" value="{{dato}}" [ngValue]="dato" > 
+        {{dato.apellido + " " + dato.apellido + ",DOC: "+dato.documento}}</option>
+</select>
+
+<div  *ngIf="clienteSelec.key != ''" class="datosCliente">
+    <p>{{todoMayuscula(this.clienteSelec.key)}}</p>
+    <p>{{"DOCUMENTO: "+this.clienteSelec.documento}}</p>
+    <p>{{"NOMBRE: "+this.clienteSelec.nombre}}</p>
+    <p>{{"APELLIDO: "+this.clienteSelec.apellido}}</p>
+    <p>{{"Fecha/Nac: "+this.clienteSelec.fechaNac}}</p>
+    <p>{{"DIRECCION: "+this.clienteSelec.direccion}}</p>
+    <p>{{"TELEFONO: "+this.clienteSelec.telefono}}</p>
+</div>
 
 <p>Producto:</p>
-<select name="producto" #producto id="producto">Elija un producto</select>
+<select [(ngModel)]="this.productoSelec"  #producto  id="producto" >Elija un producto
+    <option  *ngFor="let dato2 of colProductos" value="{{dato2}}" [ngValue]="dato2" > 
+        {{todoMayuscula(dato2.key) + " " + dato2.nombre+" $"+dato2.precio}}</option>
+</select>
+
+<div  *ngIf="productoSelec.key != ''" class="datosProductos">
+    <p>{{todoMayuscula(this.productoSelec.key)}}</p>
+        <!-- ACA DEBE IR UNA IMAGEN-->
+    <p>{{"NOMBRE: "+this.productoSelec.nombre}}</p>
+    <P>DESCRIPCION:</P>
+    <p>{{this.productoSelec.descripcion}}</p>
+    <p>{{"PRECIO: $"+this.productoSelec.precio}}</p> 
+</div>
 
 <div class="divBtnCliente">
-    <button class="btnAgregar" (click)="prueba();">Agregar venta</button>
-    <p>{{prueba()}}</p>
+    <button class="btnAgregar" (click)="agregarVenta (this.clienteSelec.key, this.productoSelec.key, fecha.value)" >Agregar venta</button>
+    
 </div>
 
