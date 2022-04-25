@@ -1,0 +1,43 @@
+<div *ngIf="this.cantCLientes == 0 && this.opcion == 0 " class="adminClientesDiv">
+    <p>NO HAY CLIENTES PARA MOSTRAR</p>
+</div>
+<div *ngIf="this.cantCLientes != 0 && this.opcion == 0" class="adminClientesDiv">
+    <p>Cliente:</p>
+    <select [(ngModel)]="this.clienteSelec"  #cliente id="cliente" >Elija un cliente
+        <option  *ngFor="let dato of colClientes" value="{{dato}}" [ngValue]="dato" > 
+            {{dato.apellido + " " + dato.apellido + ",DOC: "+dato.documento}}</option>
+    </select>
+    <br>
+    <p>{{this.clienteSelec.key}}</p> 
+    <input class="datoUsuario" type="text" #documento id="documento"
+    placeholder="{{'DOCUMENTO:'+this.clienteSelec.documento}}">
+    
+    <input class="datoUsuario" type="text" #nombre id="nombre"
+    placeholder="{{'NOMBRE:'+this.clienteSelec.nombre}}">
+    
+    <input class="datoUsuario" #apellido id="apellido" type="text" 
+    placeholder="{{'NOMBRE:'+this.clienteSelec.apellido}}">>
+    
+    <input class="datoUsuario" #fechaNac id="fechaNacimiento" type="text"
+    placeholder="{{'NOMBRE:'+this.clienteSelec.fechaNac}}">
+    
+    <input class="datoUsuario" #direccion id="direccion" type="text"
+    placeholder="{{'NOMBRE:'+this.clienteSelec.direccion}}">
+    
+    <input class="datoUsuario" id="telefono" type="text" #telefono
+    placeholder="{{'NOMBRE:'+this.clienteSelec.direccion}}">
+</div>   
+    <button class="btnUsuarios" (click)="setOpcion(2)" >Modificar</button>
+
+    <button class="btnUsuarios" (click)="clienteBorrar (this.clienteSelec.key);setOpcion(0)" >Borrar</button>
+    
+    <button class="btnUsuarios" (click)="setOpcion(1);constructor()" >Alta Cliente</button>
+
+
+<div *ngIf='this.opcion == 1' class="adminClientesDiv">
+    <app-agregar-usuario ></app-agregar-usuario>
+</div>
+
+
+
+
