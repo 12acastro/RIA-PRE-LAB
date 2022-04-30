@@ -1,3 +1,12 @@
+p {
+    font-family: 'Libre Franklin', sans-serif;
+    font-size: 1.5rem;
+}
+.titulo{
+    font-family: 'Libre Franklin', sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+}
 .datoUsuario {
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -5,11 +14,11 @@
     background-color: #d9c497;
     width: 20rem;
     height: 3rem;
-    font-size: 1 rem;
     font-family: 'Libre Franklin', sans-serif;
-    text-align: left;
+    font-size: 2 rem;
+    text-align: center;
 }
-.btnUsuarios{
+.btnUsuarios {
     margin-top: 1rem;
     margin-bottom: 1rem;
     border-radius: 1rem;
