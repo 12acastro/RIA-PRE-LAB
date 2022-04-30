@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Clientes } from '../agregar-usuario/Clientes';
 import { SeleccionComponent } from '../seleccion/seleccion.component';
+import { CrudService } from '../CRUD/app.service';
 @Component({
   selector: 'app-administrador-clientes',
   templateUrl: './administrador-clientes.component.html',
@@ -12,21 +13,15 @@ export class AdministradorClientesComponent implements OnInit {
   cantCLientes:number;
   opcion:number;
  
-
-  constructor() { 
+  private crud:CrudService = new CrudService();
+  constructor () {
     this.opcion=0;
     this.cantCLientes = 0;
     this.clienteSelec = new Clientes ("","","","","","","");
-    let thisKey = " ";
-    for (let n = 0;  n < localStorage.length; ++n) {
-      thisKey = localStorage.key(n)!;
-      if(thisKey.includes("cliente ")!){
-        let algo = JSON.parse(localStorage.getItem(thisKey)!);
-        this.colClientes.push(algo);
-        this.cantCLientes ++;
-      }
+    this.colClientes = this.crud.getDataEspecifico("cliente");
+    console.log(this.colClientes);
+    this.cantCLientes =  this.colClientes.length;
     }
-  }
   setColeccion(){
     this.colClientes=[];
     this.cantCLientes=0;
@@ -40,13 +35,12 @@ export class AdministradorClientesComponent implements OnInit {
       }
     }
   }
-  
   clienteBorrar(key:string):void{
        if(key==""){
           alert ("Seleccione un Cliente");
           return;
        }else{
-        localStorage.removeItem(key);
+        this.crud.deleteDataEspecifico(key);
         alert ("Borrado Correctamente");
         this.clienteSelec = new Clientes ("","","","","","","");
         this.setColeccion();        

@@ -2,6 +2,7 @@ import {AfterViewInit, Component, ElementRef, ViewChild, OnInit, Injectable,} fr
 import { isEmpty } from 'rxjs';
 /*import { Component, OnInit } from '@angular/core';*/
 import { Clientes } from './Clientes';
+import { CrudService } from '../CRUD/app.service';
 @Component({
   selector: 'app-agregar-usuario',
   templateUrl: './agregar-usuario.component.html',
@@ -10,25 +11,15 @@ import { Clientes } from './Clientes';
 
 
 export class AgregarUsuarioComponent implements OnInit {
-
   constructor() { }
-
+  private crud:CrudService=new CrudService();
   ngOnInit(): void {
     
   }
 
    agregarCliente(documento:string, nombre:string, apellido:string, fechaNac:string, direccion:string, telefono:string):void {
     if(documento != "" && nombre != "" && apellido  != "" && fechaNac != "" && direccion != ""){
-      let cantCliente;
-      if(localStorage.getItem("cantCliente")!=null){
-        cantCliente = parseInt(localStorage.getItem("cantCliente")!);
-        cantCliente=cantCliente+1;
-      }else{
-        cantCliente = 1;
-      }
-      localStorage.setItem("cantCliente", cantCliente.toString());
-      let cliente = new Clientes("cliente "+cantCliente,documento, nombre,apellido,fechaNac,direccion,telefono);
-      localStorage.setItem('cliente ' + cantCliente,JSON.stringify(cliente));
+      this.crud.createCliente(documento , nombre, apellido , fechaNac, direccion, telefono);
       alert('Cliente agregado satisfactoriamente');
     }else{
       alert('Rellene todos los campos')
