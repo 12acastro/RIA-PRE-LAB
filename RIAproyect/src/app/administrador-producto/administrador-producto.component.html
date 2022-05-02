@@ -1,0 +1,79 @@
+<div *ngIf="this.cantProductos == 0 && this.opcion == 'mostrarProducto' " class="adminProductosDiv">
+    <p>NO HAY PRODUCTOS PARA MOSTRAR</p>
+</div>
+
+<div *ngIf="this.cantProductos != 0 && this.opcion == 'mostrarProducto'" class="adminProductosDiv">
+    <p class="titulo">MOSTRAR producto</p>
+    <p>PRODUCTOS:</p>
+    <select [(ngModel)]="this.productoSelec"  #producto id="producto" >Elija un producto
+        <option  *ngFor="let dato of this.colProductos" value="{{dato}}" [ngValue]="dato" > 
+            {{dato.nombre + ", Valor:" + dato.precio}}</option>
+    </select>
+
+<p>{{this.productoSelec.key}}</p>
+<br>
+
+<p>Nombre:</p>
+<input class="dato" id="nombre" type="text" value = "{{this.productoSelec.nombre}}" readonly>
+
+<p>Descripcion:</p>
+<input class="dato" id="descripcion" type="text" value = "{{this.productoSelec.descripcion}}" readonly>
+
+<p>Precio:</p>
+<input class="dato"  id="precio" type="text" value = "{{this.productoSelec.precio}}" readonly>
+
+<img id="imagenProducto" src="{{this.productoSelec.imagen}}">
+
+</div>
+
+<div *ngIf="this.cantProductos != 0 && this.opcion == 'modificarProducto'" class="adminProductosDiv">
+    <p class="titulo">MODIFICAR PRODUCTO</p>
+<br>
+
+<p>Nombre:</p>
+<input class="dato" #nombre id="nombre" type="text" value = "{{this.productoSelec.nombre}}">
+
+<p>Descripcion:</p>
+<input class="dato" #descripcion id="descripcion" type="text" value = "{{this.productoSelec.descripcion}}">
+
+<p>Precio:</p>
+<input class="dato" #precio id="precio" type="text" value = "{{this.productoSelec.precio +''}}">
+
+<p>Imagen:</p>
+<input class="dato" #imagen id="imagen" type="file" accept="image/png, image/jpeg">
+   
+    <button class ="btnProductos"
+    *ngIf= "this.cantProductos != 0  && this.opcion == 'modificarProducto'"
+    (click)="this.modificarProducto (productoSelec.key, nombre.value, descripcion.value, precio.value,imagen.value);
+    setOpcion('modificarProducto')">Modificar</button>
+
+</div>
+
+<button class="btnProductos" 
+        *ngIf="this.cantProductos != 0  && this.opcion == 'mostrarProducto'" 
+         (click)="setOpcion('modificarProducto')" 
+        >Modificar
+    </button>
+
+    <button class="btnProductos" 
+        *ngIf="this.cantProductos != 0 && this.opcion == 'mostrarProducto'" 
+        (click)="productoBorrar (this.productoSelec.key);setOpcion('mostrarProducto')" 
+        >Borrar
+    </button>
+    
+    <button class="btnProductos" 
+        *ngIf="this.opcion == 'mostrarProducto'"  
+        (click)="setOpcion('altaProducto')" 
+        >Alta Producto
+    </button>
+
+    <div *ngIf="this.opcion == 'altaProducto'" class="adminProductoDiv">
+        <app-agregar-producto ></app-agregar-producto>
+    </div>
+    
+    <button class="btnProductos" 
+        *ngIf="this.opcion != 'mostrarProducto'"  
+        (click)="setOpcion('mostrarProducto')" 
+        >Atras
+    </button>
+

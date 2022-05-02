@@ -1,0 +1,36 @@
+p {
+    font-family: 'Libre Franklin', sans-serif;
+    font-size: 1.5rem;
+}
+.titulo{
+    font-family: 'Libre Franklin', sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+}
+.dato {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    background-color: #d9c497;
+    width: 20rem;
+    height: 3rem;
+    font-family: 'Libre Franklin', sans-serif;
+    font-size: 2 rem;
+    text-align: center;
+}
+.btnProductos {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    background-color: #F0A500;
+    width: auto;
+    height: auto;
+    font-size: 2rem;
+    font-family: 'Libre Franklin', sans-serif;
+    padding: 1rem;
+    &:hover{
+        opacity: 80%;
+        transform: scale(1.1);
+        cursor: pointer;
+    }
+}

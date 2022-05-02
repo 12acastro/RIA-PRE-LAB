@@ -8,6 +8,7 @@ import { SeleccionComponent } from './seleccion/seleccion.component';
 import { AgregarProductoComponent } from './agregar-producto/agregar-producto.component';
 import { AgregarVentasComponent } from './agregar-ventas/agregar-ventas.component';
 import { AdministradorClientesComponent } from './administrador-clientes/administrador-clientes.component';
+import { AdministradorProductoComponent } from './administrador-producto/administrador-producto.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { AdministradorClientesComponent } from './administrador-clientes/adminis
     SeleccionComponent,
     AgregarProductoComponent,
     AgregarVentasComponent,
-    AdministradorClientesComponent
+    AdministradorClientesComponent,
+    AdministradorProductoComponent
   ],
   imports: [
     BrowserModule,

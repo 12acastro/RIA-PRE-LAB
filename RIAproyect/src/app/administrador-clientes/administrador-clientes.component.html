@@ -71,7 +71,7 @@
     <button class="btnUsuarios" 
         *ngIf="this.cantCLientes != 0  && this.opcion == 'modificarCliente'"
          (click)="modificarCliente(this.clienteSelec.key, documento.value, nombre.value,apellido.value,fechaNac.value,direccion.value,telefono.value);
-         setOpcion('mostrarCliente')">Modificar</button>
+         setOpcion('mostrarCliente');setColeccion()">Modificar</button>
         
 
 </div>  
@@ -84,13 +84,13 @@
 
     <button class="btnUsuarios" 
         *ngIf="this.cantCLientes != 0 && this.opcion == 'mostrarCliente'" 
-        (click)="clienteBorrar (this.clienteSelec.key);setOpcion('borrarCliente')" 
+        (click)="clienteBorrar (this.clienteSelec.key);setOpcion('mostrarCliente')" 
         >Borrar
     </button>
     
     <button class="btnUsuarios" 
         *ngIf="this.opcion == 'mostrarCliente'"  
-        (click)="setOpcion('altaCliente');constructor()" 
+        (click)="setOpcion('altaCliente');" 
         >Alta Cliente
     </button>
 
@@ -99,6 +99,10 @@
     <app-agregar-usuario ></app-agregar-usuario>
 </div>
 
-
+<button class="btnUsuarios" 
+*ngIf="this.opcion != 'mostrarCliente'"  
+(click)="setOpcion('mostrarCliente')" 
+>Atras
+</button>
 
 

@@ -6,9 +6,9 @@
         <br>
         <button class="main__btnSalir" (click)="setEleccion(0)">Salir</button>
     </div>
-    <button class="main__btn" (click)="setEleccion(2)">Agregar Productos</button>
+    <button class="main__btn" (click)="setEleccion(2)">Admin. Productos</button>
     <div class="main__agregar"  *ngIf="eleccion == 2">
-        <app-agregar-producto></app-agregar-producto>
+        <app-administrador-producto></app-administrador-producto>
         <br>
         <button class="main__btnSalir" (click)="setEleccion(0)">Salir</button>
     </div>

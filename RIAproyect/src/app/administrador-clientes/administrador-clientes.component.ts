@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Clientes } from '../agregar-usuario/Clientes';
-import { SeleccionComponent } from '../seleccion/seleccion.component';
 import { CrudService } from '../CRUD/app.service';
 @Component({
   selector: 'app-administrador-clientes',
@@ -37,8 +36,7 @@ export class AdministradorClientesComponent implements OnInit {
     this.colClientes = this.crud.getDataEspecifico("cliente");
     this.cantCLientes =  this.colClientes.length;
     this.clienteSelec = new Clientes ("","","","","","","");
-    this.cantCLientes =  this.colClientes.length;
-  }
+  }  
 
   clienteBorrar(key:string):void{
        if(key==""){
