@@ -50,6 +50,10 @@ export class CrudService {
     }else{
       cant= 1;
     }
+    if(fecha == ''){
+      let date = new Date();
+      fecha = (date.toISOString().split('T')[0]);
+    }
     localStorage.setItem("cantVenta", cant.toString());
     let venta = new Ventas("venta "+ cant, Idcliente, Idproducto, fecha);
     localStorage.setItem('venta ' + cant,JSON.stringify(venta));

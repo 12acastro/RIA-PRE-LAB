@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Productos } from '../agregar-producto/Productos';
 import { Clientes } from '../agregar-usuario/Clientes';
 import { Ventas } from './Ventas';
+import { CrudService } from '../CRUD/app.service';
+
 /*import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';*/
 
@@ -16,46 +18,21 @@ export class AgregarVentasComponent implements OnInit {
   colProductos: Productos [] = [];
   clienteSelec: Clientes;
   productoSelec: Productos;
+  private crud: CrudService = new CrudService(); 
 
   constructor() { 
     this.clienteSelec = new Clientes ("","","","","","","");
     this.productoSelec = new Productos ("","","",0,"");
-    let thisKey = " ";
-    for (let n = 0;  n < localStorage.length; ++n) {
-      thisKey = localStorage.key(n)!;
-      if(thisKey.includes("cliente ")!){
-        let algo = JSON.parse(localStorage.getItem(thisKey)!);
-        this.colClientes.push(algo);
-      }else{
-        if(thisKey.includes("producto ")!){
-          let algo2 = JSON.parse(localStorage.getItem(thisKey)!);
-          this.colProductos.push(algo2);
-        }
-      }
-    }
+    this.colProductos = this.crud.getDataEspecifico("producto");
+    this.colClientes = this.crud.getDataEspecifico("cliente");
   }
 
   agregarVenta(idCliente:string,idProducto:string,fecha:string):void{
-      let cantVenta;
-      if(idCliente  != "" && idProducto  != ""){
-        if(localStorage.getItem("cantVenta")!=null){
-            cantVenta = parseInt(localStorage.getItem("cantVenta")!);
-            cantVenta=cantVenta+1;
-        }else{
-          cantVenta = 1;
-        }
-        
-        if(fecha == ''){
-          let date = new Date();
-          fecha = (date.toISOString().split('T')[0]);
-        }
-        localStorage.setItem("cantVenta", cantVenta.toString());
-        let venta = new Ventas('venta '+cantVenta,fecha,idCliente,idProducto);
-        localStorage.setItem('venta '+cantVenta,JSON.stringify(venta));
-
-      }else{
-        alert('Rellene todos los campos');
-      }
+    if(idCliente  != "" && idProducto  != ""){
+      this.crud.createVenta(idCliente,idProducto,fecha);
+    }else{
+       alert('Seleccione Cliente y Producto');
+    }
   }
 
   todoMayuscula(texto: string): string{

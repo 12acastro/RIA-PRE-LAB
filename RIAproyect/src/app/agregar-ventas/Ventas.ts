@@ -6,6 +6,7 @@ export class Ventas{
     fecha:string;
     cliente:string;
     producto:string;
+   
     constructor(key:string, fecha:string,cliente:string,producto:string){
         this.key=key;
         this.fecha = fecha;    

@@ -1,3 +1,10 @@
+<div *ngIf="this.colClientes.length ==0">
+    <h3>Necesita al menos un cliente registrado.</h3>
+</div>
+<div *ngIf="this.colProductos.length ==0 ">
+    <h3>Necesita al menos un producto registrado</h3>
+</div>
+<div *ngIf="this.colProductos.length !=0 && this.colClientes.length !=0">
 <p>Fecha:</p>
 <input class="fecha" #fecha id="fecha" type="date">
 
@@ -34,6 +41,6 @@
 
 <div class="divBtnCliente">
     <button class="btnAgregar" (click)="agregarVenta (this.clienteSelec.key, this.productoSelec.key, fecha.value)" >Agregar venta</button>
-    
+</div>
 </div>
 

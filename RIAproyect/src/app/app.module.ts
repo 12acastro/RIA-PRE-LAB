@@ -9,6 +9,7 @@ import { AgregarProductoComponent } from './agregar-producto/agregar-producto.co
 import { AgregarVentasComponent } from './agregar-ventas/agregar-ventas.component';
 import { AdministradorClientesComponent } from './administrador-clientes/administrador-clientes.component';
 import { AdministradorProductoComponent } from './administrador-producto/administrador-producto.component';
+import { MostrarVentasComponent } from './mostrar-ventas/mostrar-ventas.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AdministradorProductoComponent } from './administrador-producto/adminis
     AgregarProductoComponent,
     AgregarVentasComponent,
     AdministradorClientesComponent,
-    AdministradorProductoComponent
+    AdministradorProductoComponent,
+    MostrarVentasComponent
   ],
   imports: [
     BrowserModule,

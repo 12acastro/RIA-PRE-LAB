@@ -1,0 +1,23 @@
+.listbox-area {
+    display: grid;
+    grid-gap: 2em;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 20px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    background: #eee;
+  }
+  
+  [role="listbox"] {
+    margin: 1em 0 0;
+    padding: 0;
+    min-height: 18em;
+    border: 1px solid #aaa;
+    background: white;
+  }
+  
+  [role="listbox"]#ss_elem_list {
+    position: relative;
+    max-height: 18em;
+    overflow-y: auto;
+  }
