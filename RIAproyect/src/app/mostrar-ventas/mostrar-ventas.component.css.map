@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,MAAM,CAAA;EACJ,KAAK,EAAC,IAAI;EACV,UAAU,EAAE,IAAI;EAChB,WAAW,EAAE,IAAI;CAElB;;AACD,AAAA,CAAC,CAAC;EACA,WAAW,EAAE,4BAA4B;EACzC,SAAS,EAAE,MAAM;CAClB;;AAED,AAAA,EAAE,CAAC;EACD,WAAW,EAAE,4BAA4B;EACzC,SAAS,EAAE,MAAM;EACjB,WAAW,EAAE,IAAI;CAClB",
+    "sources": [
+        "mostrar-ventas.component.scss"
+    ],
+    "names": [],
+    "file": "mostrar-ventas.component.css"
+}

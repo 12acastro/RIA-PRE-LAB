@@ -18,5 +18,10 @@
         <br>
         <button class="main__btnSalir" (click)="setEleccion(0)">Salir</button>
     </div>
+    <button class="main__btn" (click)="setEleccion(4)">Mostrar Ventas</button>
+    <div class="main__agregar" *ngIf="eleccion == 4">
+        <app-mostrar-ventas></app-mostrar-ventas>
+        <br>
+        <button class="main__btnSalir" (click)="setEleccion(0)">Salir</button>
     
 </div>

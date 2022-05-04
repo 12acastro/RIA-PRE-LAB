@@ -1,9 +1,11 @@
-#datos{
-  float:left;
+#datos {
+  float: left;
   text-align: left;
-  align-items: left;
-  
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
 }
+
 p {
   font-family: 'Libre Franklin', sans-serif;
   font-size: 1.2rem;
@@ -14,4 +16,4 @@ h3 {
   font-size: 1.5rem;
   font-weight: bold;
 }
-
+/*# sourceMappingURL=mostrar-ventas.component.css.map */

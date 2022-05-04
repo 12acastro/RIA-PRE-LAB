@@ -13,14 +13,14 @@ export class CrudService {
   public createCliente(documento:string, nombre:string, apellido:string, fechaNac:string, direccion:string, telefono:string){
     
       let cant;
-      if(localStorage.getItem("cantCliente")!=null){
-        cant = parseInt(localStorage.getItem("cantCliente")!);
+      if(localStorage.getItem("cantClien")!=null){
+        cant = parseInt(localStorage.getItem("cantClien")!);
         cant++;
       }else{
         cant= 1;
       }
       
-      localStorage.setItem("cantCliente", cant.toString());
+      localStorage.setItem("cantClien", cant.toString());
       let cliente = new Clientes("cliente "+ cant, documento, nombre, apellido, fechaNac, direccion, telefono);
       localStorage.setItem('cliente ' + cant,JSON.stringify(cliente));
 
@@ -30,13 +30,13 @@ export class CrudService {
   //CREA UN PRODUCTO
   public createProducto(nombre:string, descripcion:string, precio:number, imagen:string){
     let cant;
-    if(localStorage.getItem("cantProducto")!=null){
-      cant = parseInt(localStorage.getItem("cantProducto")!);
+    if(localStorage.getItem("cantProduc")!=null){
+      cant = parseInt(localStorage.getItem("cantProduc")!);
       cant++;
     }else{
       cant= 1;
     }
-    localStorage.setItem("cantProducto", cant.toString());
+    localStorage.setItem("cantProduc", cant.toString());
     let producto = new Productos("producto "+ cant, nombre, descripcion, precio, imagen);
     localStorage.setItem('producto ' + cant,JSON.stringify(producto));
   }
@@ -44,8 +44,8 @@ export class CrudService {
   //CREA UNA VENTA
   public createVenta(Idcliente:string, Idproducto:string, fecha:string){
     let cant;
-    if(localStorage.getItem("cantVenta")!=null){
-      cant = parseInt(localStorage.getItem("cantVenta")!);
+    if(localStorage.getItem("cantVen")!=null){
+      cant = parseInt(localStorage.getItem("cantVen")!);
       cant++;
     }else{
       cant= 1;
@@ -54,7 +54,7 @@ export class CrudService {
       let date = new Date();
       fecha = (date.toISOString().split('T')[0]);
     }
-    localStorage.setItem("cantVenta", cant.toString());
+    localStorage.setItem("cantVen", cant.toString());
     let venta = new Ventas("venta "+ cant, Idcliente, Idproducto, fecha);
     localStorage.setItem('venta ' + cant,JSON.stringify(venta));
   }
@@ -94,3 +94,4 @@ export class CrudService {
     localStorage.setItem(key,JSON.stringify(producto));
   }
 }
+

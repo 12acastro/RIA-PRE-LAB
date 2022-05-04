@@ -1,0 +1,62 @@
+/*
+Esto esta mal pero para probar
+*/
+.main__btnSalir {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+  background-color: #F0A500;
+  width: 10rem;
+  height: auto;
+  font-size: 2rem;
+  font-family: 'Libre Franklin', sans-serif;
+  padding: 1rem;
+}
+
+.main__btnSalir:hover {
+  opacity: 80%;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  cursor: pointer;
+}
+
+.main__btn {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+  background-color: #F0A500;
+  width: 20rem;
+  height: 5rem;
+  font-size: 2rem;
+  font-family: 'Libre Franklin', sans-serif;
+  padding: 1rem;
+}
+
+.main__btn:hover {
+  opacity: 80%;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  cursor: pointer;
+}
+
+.main__agregar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #434343;
+  opacity: 80%;
+  width: 30rem;
+  height: auto;
+  border-radius: 3rem;
+  padding: 2rem;
+  color: wheat;
+  text-align: center;
+}
+/*# sourceMappingURL=seleccion.component.css.map */

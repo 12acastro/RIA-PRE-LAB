@@ -1,0 +1,41 @@
+h3 {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 2.5 rem;
+}
+
+p {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 1.5rem;
+}
+
+.datoUsuario {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+  background-color: #d9c497;
+  width: 20rem;
+  height: 3rem;
+  font-size: 1.5rem;
+  font-family: 'Libre Franklin', sans-serif;
+  text-align: center;
+}
+
+.btnAgregar {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+  background-color: #F0A500;
+  width: auto;
+  height: auto;
+  font-size: 2rem;
+  font-family: 'Libre Franklin', sans-serif;
+  padding: 1rem;
+}
+
+.btnAgregar:hover {
+  opacity: 80%;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  cursor: pointer;
+}
+/*# sourceMappingURL=agregar-usuario.component.css.map */
