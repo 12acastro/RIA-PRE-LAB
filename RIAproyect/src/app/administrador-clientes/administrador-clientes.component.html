@@ -3,7 +3,6 @@
 </div>
 <div *ngIf="this.cantCLientes != 0 && this.opcion == 'mostrarCliente'" class="adminClientesDiv">
     <p class="titulo">MOSTRAR CLIENTE</p>
-    <p>Cliente:</p>
     <select [(ngModel)]="this.clienteSelec"  #cliente id="cliente" >Elija un cliente
         <option  *ngFor="let dato of colClientes" value="{{dato}}" [ngValue]="dato" > 
             {{dato.apellido + " " + dato.apellido + ",DOC: "+dato.documento}}</option>
