@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Productos } from './Productos';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-agregar-producto',
   templateUrl: './agregar-producto.component.html',
@@ -27,10 +28,18 @@ export class AgregarProductoComponent implements OnInit {
         localStorage.setItem("cantProducto", cantProducto.toString())
         let producto = new Productos("producto "+cantProducto,nombre,descripcion,precio1,imagen);
         localStorage.setItem("producto " + cantProducto,JSON.stringify(producto));
-        alert('Producto agregado satisfactoriamente');
+        Swal.fire(
+          'Error',
+          'Producto agregado correctamente',
+          'success'
+        )
      
     }else{
-      alert('Rellene todos los campos');
+      Swal.fire(
+        'Error',
+        'Rellene todos los campos',
+        'error'
+      )
     }
   }
 

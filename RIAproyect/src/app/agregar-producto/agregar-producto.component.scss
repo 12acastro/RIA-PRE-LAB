@@ -18,7 +18,8 @@ p {
     margin-top: 1rem;
     margin-bottom: 1rem;
     border-radius: 1rem;
-    background-color: #F0A500;
+    background-color: #1b1a17;
+    color: whitesmoke;
     width: auto;
     height: auto;
     font-size: 2rem;
@@ -29,4 +30,16 @@ p {
         transform: scale(1.1);
         cursor: pointer;
     }
+}
+
+#producto{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    background-color: #d9c497;
+    width: 20rem;
+    height: 3rem;
+    font-family: "Libre Franklin", sans-serif;
+    font-size: 2 rem;
+    text-align: center;
 }

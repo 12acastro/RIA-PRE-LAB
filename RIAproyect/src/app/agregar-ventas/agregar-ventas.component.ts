@@ -3,6 +3,7 @@ import { Productos } from '../agregar-producto/Productos';
 import { Clientes } from '../agregar-usuario/Clientes';
 import { Ventas } from './Ventas';
 import { CrudService } from '../CRUD/app.service';
+import Swal from 'sweetalert2';
 
 /*import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';*/
@@ -31,7 +32,11 @@ export class AgregarVentasComponent implements OnInit {
     if(idCliente  != "" && idProducto  != ""){
       this.crud.createVenta(idCliente,idProducto,fecha);
     }else{
-       alert('Seleccione Cliente y Producto');
+      Swal.fire(
+        'Error',
+        'Seleccione cliente y producto',
+        'error'
+      )
     }
   }
 

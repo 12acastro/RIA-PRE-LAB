@@ -7,26 +7,12 @@
 }
 .header {
     background-color: #1B1A17;
-    &__btnModoOscuro{
-        margin-top: 1rem;
-        margin-left: 1rem;
-        border-radius: 1rem;
-        background-color: #F0A500;
-        width: auto;
-        height: auto;
-        padding: 1rem;
-        font-size: 1rem;
-        font-family: 'Libre Franklin', sans-serif;
-    }
-    &__logo{
-        @include centrado;
-    }
-    &__img{
-       width: 10rem;
-       height: 10 rem;
-    } 
+    height: 5rem;
+  
     &__titulo{
             color: $colorTitulo;
+            @include centrado;
+            padding: 1.5rem;
             font-family: 'Libre Franklin', sans-serif;
         }
         

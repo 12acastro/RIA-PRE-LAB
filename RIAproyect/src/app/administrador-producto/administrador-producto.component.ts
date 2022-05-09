@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Productos } from '../agregar-producto/Productos';
 import { CrudService } from '../CRUD/app.service';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-administrador-producto',
   templateUrl: './administrador-producto.component.html',
@@ -30,10 +30,18 @@ export class AdministradorProductoComponent implements OnInit {
           imagen = this.productoSelec.imagen;
         }
           this.crud.updateProducto(key,nombre, descripcion,parseInt(precio),imagen);
-          alert('Producto modificado satisfactoriamente');
+          Swal.fire(
+            'Genial',
+            'Producto modificado satisfactoriamentte!',
+            'success'
+          )
           this.setColeccion();
       }else{
-        alert('Rellene todos los campos');
+        Swal.fire(
+          'Error',
+          'Rellene todos los campos',
+          'error'
+        )
       }
     }
     

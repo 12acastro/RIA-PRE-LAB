@@ -1,25 +1,27 @@
-<div *ngIF="this.colVentas.longht == 0">
+<div *ngIf="this.colVentas.length == 0">
     <h3>NO HAY VENTAS PARA MOSTRAR</h3>
 </div>
- <select [(ngModel)]="this.venta" (ngModelChange)="obtenerCliente()" id="venta" size="12">Elija Venta
-  <option  *ngFor="let dato of colVentas" value="{{dato}}" [ngValue]="dato" > 
-      {{todoMayuscula(dato.key) + " - "+ todoMayuscula(dato.fecha) + " - "+
-       todoMayuscula(dato.cliente) + " - " + todoMayuscula(dato.producto)}}</option>
-</select>
-
-<br>
-<div *ngIf="venta.key!=''" class="divDatos" id="datos">
-    <h3>CLIENTE:</h3>
-    <p>{{todoMayuscula(this.cliente.key)}}</p>
-    <p>{{"DOC:"+this.cliente.documento}}</p>
-    <p>{{this.cliente.nombre + " " + this.cliente.apellido}}</p>
-    <br>
-    <h3>PRODUCTO:</h3>
-    <p>{{todoMayuscula(this.producto.key)}}</p>
-    <p>{{this.producto.nombre}}</p>
-    <p>{{"$"+this.producto.precio}}</p>
-
-
+<div *ngIf="this.colVentas.length > 0">
+    <select [(ngModel)]="this.venta" (ngModelChange)="obtenerCliente()" id="venta" size="12">Elija Venta
+     <option  *ngFor="let dato of colVentas" value="{{dato}}" [ngValue]="dato" > 
+         {{todoMayuscula(dato.key) + " - "+ todoMayuscula(dato.fecha) + " - "+
+          todoMayuscula(dato.cliente) + " - " + todoMayuscula(dato.producto)}}</option>
+   </select>
+   <br>
+   <div *ngIf="venta.key!=''" class="divDatos" id="datos">
+       <h3>CLIENTE:</h3>
+       <p>{{todoMayuscula(this.cliente.key)}}</p>
+       <p>{{"DOC:"+this.cliente.documento}}</p>
+       <p>{{this.cliente.nombre + " " + this.cliente.apellido}}</p>
+       <br>
+       <h3>PRODUCTO:</h3>
+       <p>{{todoMayuscula(this.producto.key)}}</p>
+       <p>{{this.producto.nombre}}</p>
+       <p>{{"$"+this.producto.precio}}</p>
+   
+   
+   </div>
 </div>
+
 
  

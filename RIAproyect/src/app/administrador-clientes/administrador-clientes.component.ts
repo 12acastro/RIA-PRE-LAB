@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Clientes } from '../agregar-usuario/Clientes';
 import { CrudService } from '../CRUD/app.service';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-administrador-clientes',
   templateUrl: './administrador-clientes.component.html',
@@ -25,10 +26,18 @@ export class AdministradorClientesComponent implements OnInit {
   modificarCliente(key:string, documento:string, nombre:string, apellido:string, fechaNac:string, direccion:string, telefono:string):void{
     if(documento != "" && nombre != "" && apellido  != "" && fechaNac != "" && direccion != ""){
       this.crud.updateCliente(key,documento, nombre, apellido, fechaNac, direccion, telefono);
-      alert('Cliente modificado satisfactoriamente');
+      Swal.fire(
+        'Genial',
+        'Usuario modificado satisfactoriamentte!',
+        'success'
+      )
       this.setColeccion();
     }else{
-      alert('Rellene todos los campos')
+      Swal.fire(
+        'Error',
+        'Rellene todos los campos',
+        'error'
+      )
     }
   }
   
@@ -40,11 +49,19 @@ export class AdministradorClientesComponent implements OnInit {
 
   clienteBorrar(key:string):void{
        if(key==""){
-          alert ("Seleccione un Cliente");
+        Swal.fire(
+          'Error',
+          'Seleccione un cliente',
+          'error'
+        )
           return;
        }else{
           this.crud.deleteDataEspecifico(key);
-          alert ("Borrado Correctamente");
+          Swal.fire(
+            'Error',
+            'Cliente borrado correctamente',
+            'success'
+          )
           this.setColeccion();        
        }
       

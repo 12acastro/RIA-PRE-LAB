@@ -3,6 +3,7 @@ import { isEmpty } from 'rxjs';
 /*import { Component, OnInit } from '@angular/core';*/
 import { Clientes } from './Clientes';
 import { CrudService } from '../CRUD/app.service';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-agregar-usuario',
   templateUrl: './agregar-usuario.component.html',
@@ -20,9 +21,17 @@ export class AgregarUsuarioComponent implements OnInit {
    agregarCliente(documento:string, nombre:string, apellido:string, fechaNac:string, direccion:string, telefono:string):void {
     if(documento != "" && nombre != "" && apellido  != "" && fechaNac != "" && direccion != ""){
       this.crud.createCliente(documento , nombre, apellido , fechaNac, direccion, telefono);
-      alert('Cliente agregado satisfactoriamente');
+      Swal.fire(
+        'Genial',
+        'Usuario agregado satisfactoriamentte!',
+        'success'
+      )
     }else{
-      alert('Rellene todos los campos')
+      Swal.fire(
+        'Error',
+        'Rellene todos los campos si quiere registrar un usuario',
+        'error'
+      )
     }
   }
  
