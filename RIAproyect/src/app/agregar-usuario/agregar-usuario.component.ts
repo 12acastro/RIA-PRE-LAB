@@ -36,12 +36,3 @@ export class AgregarUsuarioComponent implements OnInit {
   }
  
 }
-/*
- for (let n = 0;  n < localStorage.length; ++n) {
-      thisKey = localStorage.key(n)!;
-      if(thisKey.includes("cliente ")!){
-        let algo = JSON.parse(localStorage.getItem(thisKey)!);
-        this.colClientes.push(algo);
-      }
-    }
-*/

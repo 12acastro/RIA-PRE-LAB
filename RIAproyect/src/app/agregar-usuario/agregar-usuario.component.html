@@ -21,5 +21,6 @@
 <p>Telefono:</p>
 <input class="datoUsuario" id="telefono" type="text" #telefono>
 <div class="divBtnCliente">
-    <button class="btnAgregar" (click)="agregarCliente(documento.value,nombre.value, apellido.value,fechaNac.value,direccion.value,telefono.value)">Agregar Cliente</button>
+    <button class="btnAgregar" (click)="agregarCliente(documento.value,nombre.value, apellido.value,fechaNac.value,direccion.value,telefono.value);
+    documento.value='';nombre.value=''; apellido.value='';fechaNac.value='';direccion.value='';telefono.value=''">Agregar Cliente</button>
 </div>

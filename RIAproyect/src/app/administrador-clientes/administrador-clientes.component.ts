@@ -69,6 +69,9 @@ export class AdministradorClientesComponent implements OnInit {
 
   setOpcion(op:string){
     this.opcion = op;
+    if(op == "mostrarCliente"){
+      this.setColeccion();
+    } 
   }
 
   ngOnInit(): void {

@@ -18,7 +18,9 @@ cliente:Clientes;
 producto:Productos;
 venta:Ventas;
 
+
 constructor() {
+
     this.venta = new Ventas("","","","");
     this.producto = new Productos("","","",0,"");
     this.cliente= new Clientes("","","","","","","");
@@ -28,7 +30,7 @@ constructor() {
   obtenerCliente():void{
      if(this.venta.key!=""){
         let nuevo = this.crud.getDataEspecifico(this.venta.cliente)!;
-        this.cliente = nuevo[0];
+        this.cliente = nuevo [0];
         let nuevo2 = this.crud.getDataEspecifico(this.venta.producto)!;
         this.producto = nuevo2[0];
      }

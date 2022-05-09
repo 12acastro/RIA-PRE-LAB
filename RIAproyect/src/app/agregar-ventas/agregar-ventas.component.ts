@@ -5,9 +5,6 @@ import { Ventas } from './Ventas';
 import { CrudService } from '../CRUD/app.service';
 import Swal from 'sweetalert2';
 
-/*import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';*/
-
 
 @Component({
   selector: 'app-agregar-ventas',
@@ -19,7 +16,8 @@ export class AgregarVentasComponent implements OnInit {
   colProductos: Productos [] = [];
   clienteSelec: Clientes;
   productoSelec: Productos;
-  private crud: CrudService = new CrudService(); 
+  private crud: CrudService = new CrudService();
+
 
   constructor() { 
     this.clienteSelec = new Clientes ("","","","","","","");
@@ -28,9 +26,15 @@ export class AgregarVentasComponent implements OnInit {
     this.colClientes = this.crud.getDataEspecifico("cliente");
   }
 
+
   agregarVenta(idCliente:string,idProducto:string,fecha:string):void{
     if(idCliente  != "" && idProducto  != ""){
       this.crud.createVenta(idCliente,idProducto,fecha);
+      Swal.fire(
+        'Genial',
+        'Producto agregado correctamente',
+        'success'
+      )
     }else{
       Swal.fire(
         'Error',

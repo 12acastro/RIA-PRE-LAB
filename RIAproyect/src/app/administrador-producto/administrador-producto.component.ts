@@ -47,6 +47,9 @@ export class AdministradorProductoComponent implements OnInit {
     
     setOpcion(op:string){
       this.opcion = op;
+      if(op == "mostrarProducto"){
+        this.setColeccion();
+      }
     }
 
     setColeccion(){
